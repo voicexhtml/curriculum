@@ -1,5 +1,8 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage{fancybox}
+\usepackage{underscore}
+
 \beamertemplatenavigationsymbolsempty
 
 \usetheme{Warsaw}
@@ -27,6 +30,13 @@
 \frame{\titlepage}
 
 \begin{frame}
+	\frametitle{Tor Browser}
+	\begin{center}
+		\includegraphics[width= \paperwidth]{shots/generic/browser.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
 \frametitle{How the Tor Browser protects your privacy}
 	\begin{block}{How the TBB protects your privacy}
 The Tor Browser is based on Mozilla's Extended Support Release (ESR) Firefox branch. We have a series of patches against this browser to enhance privacy and security. Browser behavior is additionally augmented through the Torbutton extension, though we are in the process of moving this functionality into direct Firefox patches. We also change a number of Firefox preferences from their defaults.
@@ -43,6 +53,9 @@ The Tor Browser, along with its signatures can be downloaded from our website at
 % Insert image of successful GnuPG verification
 \begin{frame}
 \frametitle{Verifying the Tor Browser}
+        \begin{center}
+                \includegraphics[width= \paperwidth]{shots/linux/verify.png}
+        \end{center}
 \end{frame}
 
 \begin{frame}
@@ -62,37 +75,74 @@ Each file on our download page is accompanied by a file with the same name as th
 \begin{frame}
 \frametitle{Verifying the Tor Browser}
         \begin{block}{Windows: How?}
+		\center
+		\doublebox{gpg --verify torbrowser-install-4.5.2_en-US\{.exe.asc,.exe\}}
 	\end{block}
 \end{frame}
 
 \begin{frame}
 \frametitle{Verifying the Tor Browser}
-        \begin{block}{OSX: How?}
-        \end{block}
+	\begin{block}{OSX: How?}
+        \center
+		\doublebox{gpg --verify TorBrowser-4.5.2-osx64_en-US\{.dmg.asc,.dmg\}}
+	\end{block}
 \end{frame}
 
 \begin{frame}
 \frametitle{Verifying the Tor Browser}
         \begin{block}{Linux: How?}
+		\center
+		\doublebox{
+		gpg --verify tor-browser-linux64-4.5.2_en-US.tar\{.xz.asc,.xz\}}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Running the Tor Browser}
+        \begin{block}{Windows: Installing}
+	\center	
+		\doublebox{Click on torbrowser-install-4.5.2_en-US.exe}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Running the Tor Browser}
+	\begin{block}{Windows: Running}
+	\center
+		\doublebox{Open the new "Tor Browser" folder and run "Start Tor Browser"}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Running the Tor Browser}
+        \begin{block}{OSX: Installing}
+	\center
+	\doublebox{Open TorBrowser-4.5.2-osx64_en-US.dmg}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Running the Tor Browser}
+	\begin{block}{OSX: Running}
+		\center	
+		\doublebox{Run TorBrowser.app}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Running the Tor Browser}
+        \begin{block}{Linux: Extracting}
+		\center
+                        \doublebox{tar -vxf tor-browser-linux64-4.5.2_en-US.tar.xz}
         \end{block}
 \end{frame}
 
 \begin{frame}
 \frametitle{Running the Tor Browser}
-        \begin{block}{Windows: How?}
-        \end{block}
-\end{frame}
-
-\begin{frame}
-\frametitle{Running the Tor Browser}
-        \begin{block}{OSX: How?}
-        \end{block}
-\end{frame}
-
-\begin{frame}
-\frametitle{Running the Tor Browser}
-        \begin{block}{Linux: How?}
-        \end{block}
+        \begin{block}{Linux: Running}
+	\center
+	\doublebox{Run start-tor-browser.desktop}
+	\end{block}
 \end{frame}
 
 \end{document}
